@@ -1,0 +1,39 @@
+A day late reply.. 
+
+But, the Synclock demosys has no out-of-the-box feature for that kind of screens. It's made for synclock stuff foremost.
+
+However, it's not that hard to add for a separate screen:
+
+runtime_init:
+move.l $120.w,savetb
+move.l #mytb,$120.w
+rts
+
+vbl:
+move.w #$2700,sr ;Stop all interrupts
+clr.b $fffffa1b.w ;Timer B control (stop)
+bset #0,$fffffa07.w ;Interrupt enable A (Timer B)
+bset #0,$fffffa13.w ;Interrupt mask A (Timer B)
+move.b #1,$fffffa21.w ;Timer B data (number of scanlines to next interrupt)
+bclr #3,$fffffa17.w ;Automatic end of interrupt
+move.b #8,$fffffa1b.w ;Timer B control (event mode (HBL))
+move.w #$2300,sr
+rts
+
+mytb:
+rte
+
+runtime_exit:
+clr.b $fffffa1b.w
+move.l savetb,$120.w
+rts
+
+
+
+You probably don't need to restore $120 either, the demosys does that at exit.
+
+If all fails, I can help you with an example in a couple of weeks, much stuff to do before that.
+
+--
+Anders Eriksson
+ae@dhs.nu

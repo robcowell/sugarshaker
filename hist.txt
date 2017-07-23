@@ -1,0 +1,65 @@
+$000142b8 : d4bc 0000 8000                     add.l     #$8000,d2
+$000142be : d6bc 0000 8000                     add.l     #$8000,d3
+$000142c4 : 4842                               swap      d2
+$000142c6 : 4843                               swap      d3
+$000142c8 : d440                               add.w     d0,d2
+$000142ca : d641                               add.w     d1,d3
+$000142cc : 3006                               move.w    d6,d0
+$000142ce : 3207                               move.w    d7,d1
+$000142d0 : 7801                               moveq     #1,d4
+$000142d2 : 4e75                               rts       
+$0001376a : 4a84                               tst.l     d4
+$0001376c : 670c                               beq.s     $1377a
+$0001376e : 41f9 0003 9eca                     lea       $39eca,a0
+$00013774 : 4eb9 0001 3a22                     jsr       $13a22
+$00013a22 : b440                               cmp.w     d0,d2
+$00013a24 : 6a04                               bpl.s     $13a2a
+$00013a2a : 9440                               sub.w     d0,d2
+$00013a2c : 9641                               sub.w     d1,d3
+$00013a2e : 6a00 0296                          bpl       $13cc6
+$00013cc6 : d241                               add.w     d1,d1
+$00013cc8 : d241                               add.w     d1,d1
+$00013cca : 45f9 0003 0394                     lea       $30394,a2
+$00013cd0 : d1f2 1000                          adda.l    (a2,d1.w),a0
+$00013cd4 : 3200                               move.w    d0,d1
+$00013cd6 : c07c 000f                          and.w     #$f,d0
+$00013cda : b141                               eor.w     d0,d1
+$00013cdc : e249                               lsr.w     #1,d1
+$00013cde : d0c1                               adda.w    d1,a0
+$00013ce0 : b642                               cmp.w     d2,d3
+$00013ce2 : 6200 00fc                          bhi       $13de0
+$00013ce6 : 6700 009e                          beq       $13d86
+$00013cea : 45f9 0007 108a                     lea       $7108a,a2
+$00013cf0 : 3802                               move.w    d2,d4
+$00013cf2 : d844                               add.w     d4,d4
+$00013cf4 : d844                               add.w     d4,d4
+$00013cf6 : 2832 4000                          move.l    (a2,d4.w),d4
+$00013cfa : c6c4                               mulu.w    d4,d3
+$00013cfc : 4844                               swap      d4
+$00013cfe : e8ab                               lsr.l     d4,d3
+$00013d00 : 383c 8000                          move.w    #$8000,d4
+$00013d04 : 947c 0010                          sub.w     #$10,d2
+$00013d08 : 6b3c                               bmi.s     $13d46
+$00013d0a : 7200                               moveq     #0,d1
+$00013d0c : 3203                               move.w    d3,d1
+$00013d0e : e989                               lsl.l     #4,d1
+$00013d10 : 45f9 0005 a8ca                     lea       $5a8ca,a2
+$00013d16 : 3a00                               move.w    d0,d5
+$00013d18 : e94d                               lsl.w     #4,d5
+$00013d1a : da40                               add.w     d0,d5
+$00013d1c : 4841                               swap      d1
+$00013d1e : da41                               add.w     d1,d5
+$00013d20 : 4841                               swap      d1
+$00013d22 : da45                               add.w     d5,d5
+$00013d24 : d4c5                               adda.w    d5,a2
+$00013d26 : 2679 0005 b0f2                     movea.l   $5b0f2,a3
+$00013d2c : 43fa 0012                          lea       $13d40(pc),a1
+$00013d30 : 7a02                               moveq     #2,d5
+$00013d32 : d841                               add.w     d1,d4
+$00013d34 : 9d46                               subx.w    d6,d6
+$00013d36 : cc45                               and.w     d5,d6
+$00013d38 : 3c32 6000                          move.w    (a2,d6.w),d6
+$00013d3c : 4ef3 6000                          jmp       (a3,d6.w)
+$00000000 : 602e                               bra.s     $30
+$00000030 : 0ce0                               DC.W      $0ce0
+Debugger: *CPU breakpoint*

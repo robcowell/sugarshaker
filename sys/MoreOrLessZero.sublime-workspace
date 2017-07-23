@@ -1,0 +1,374 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"dmg",
+				"dmg4_picture"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"contents": "Searching 71 files for \"macro\"\n\n/Users/robcowell/code/Source Code (2) (1)/ggn sources/Atari_ST_Sources/ASM/Dead Hackers Society/Demo/More_Or_Less_Zero/music/pt_src50.s:\n 1582  mt_temp_regs\trs.l\t2\n 1583  mt_temp_old_sam\trs.w\t2\n 1584: mt_channel\tmacro\n 1585  \tmove.l\t(a3),d0\n 1586  \tbne.s\t.mt_v0_active\n\n/Users/robcowell/code/Source Code (2) (1)/ggn sources/Atari_ST_Sources/ASM/Dead Hackers Society/Demo/More_Or_Less_Zero/sys/mth68000.s:\n   33  *******************************************************************************\n   34  *\t\t\t\t\t\t\t\t\t      *\n   35: *  Macro for defininig fixedpoint values in scientific notation\t\t      *\n   36  *\t\t\t\t\t\t\t\t\t      *\n   37  * Examples:\t\t\t\t\t\t\t\t      *\n   ..\n   43  *\t\t\t\t\t\t\t\t\t      *\n   44  *******************************************************************************\n   45: dcfix\tmacro\tmantissa,exponent\n   46  \tifc\t'\\2','e-5'\n   47  \t\tdc.\\0\t\\1<<8/100000\n   ..\n  105  *******************************************************************************\n  106  *\t\t\t\t\t\t\t\t\t      *\n  107: *  Macro for defininig fixedpoint equates in scientific notation\t      *\n  108  *\t\t\t\t\t\t\t\t\t      *\n  109  * Examples:\t\t\t\t\t\t\t\t      *\n  ...\n  114  *\t\t\t\t\t\t\t\t\t      *\n  115  *******************************************************************************\n  116: fequ\t\tmacro\tlabel,mantissa,exponent\n  117  \tifc\t'\\3','e-5'\n  118  \\1\t\tequ\t\\2<<8/100000\n  ...\n  190  *\t\t\t\t\t\t\t\t\t      *\n  191  *******************************************************************************\n  192: fint\t\tmacro\n  193  \t\tasr.w\t#8,\\1\n  194  \t\n  ...\n  205  *\t\t\t\t\t\t\t\t\t      *\n  206  *******************************************************************************\n  207: fabs\t\tmacro\n  208  .\\@abs\t\tneg.w\t\\1\n  209  \t\tbmi.s\t.\\@abs\n  ...\n  222  *\t\t\t\t\t\t\t\t\t      *\n  223  *******************************************************************************\n  224: fmul\t\tmacro\n  225  \t\tmuls.w\t\\1,\\2\n  226  \t\tasr.l\t#8,\\2\n  ...\n  239  *\t\t\t\t\t\t\t\t\t      *\n  240  *******************************************************************************\n  241: fdiv\t\tmacro\n  242  \t\tasl.l\t#8,\\2\n  243  \t\tdivs.w\t\\1,\\2\n  ...\n  259  *\t\t\t\t\t\t\t\t\t      *\n  260  *******************************************************************************\n  261: fsin\t\tmacro\n  262  \n  263  ; Determine quadrant and clamp angle\n  ...\n  313  *\t\t\t\t\t\t\t\t\t      *\n  314  *******************************************************************************\n  315: fcos\t\tmacro\n  316  \t\taddi.w\t#$3fff,\\1\t; cos(x) = sin(x+ã/2)\n  317  \t\tfsin\t\\1\n  ...\n  330  *\t\t\t\t\t\t\t\t\t      *\n  331  *******************************************************************************\n  332: ftan\t\tmacro\n  333  \t\tmove.w\t\\1,-(sp)\n  334  \t\tfcos\t\\1\n  ...\n  365  *\t\t\t\t\t\t\t\t\t      *\n  366  *******************************************************************************\n  367: fatan\t\tmacro\n  368  \n  369  ; Preadjust\n  ...\n  431  *\t\t\t\t\t\t\t\t\t      *\n  432  *******************************************************************************\n  433: fetox\t\tmacro\n  434  \t\tmove.w\t\\1,-(sp)\n  435  \n  ...\n  465  *\t\t\t\t\t\t\t\t\t      *\n  466  *******************************************************************************\n  467: fsqrt\t\tmacro\n  468  \t\tmove.l\t\\1,-(sp)\n  469  \t\tasl.l\t#8,\\1\t\t; Shift to 16.16 precision\n\n15 matches across 2 files\n\n\nSearching 71 files for \"w*4\"\n\n/Users/robcowell/code/Source Code (2) (1)/ggn sources/Atari_ST_Sources/ASM/Dead Hackers Society/Demo/More_Or_Less_Zero/envmap/envmultb.s:\n  612  \tmove.w\t(a0,d0.w),d1 \t\t;.l ??? (a0,d0.w*2),d1\t;place for curr z val\n  613  \tlsl.w\t#2,d1\n  614: \tmove.l\td0,(a2,d1.w)\t\t;(a2,d1.w*4)\t\n  615  \tdbra\td7,.cpy\n  616  \n\n1 match in 1 file\n",
+			"settings":
+			{
+				"buffer_size": 3574,
+				"line_ending": "Unix",
+				"name": "Find Results",
+				"scratch": true
+			}
+		},
+		{
+			"file": "/Users/robcowell/code/Source Code (2) (1)/ggn sources/Atari_ST_Sources/ASM/Dead Hackers Society/Demo/More_Or_Less_Zero/sys/mth68000.s",
+			"settings":
+			{
+				"buffer_size": 10467,
+				"encoding": "Western (Windows 1252)",
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 107.0,
+		"last_filter": "instal",
+		"selected_items":
+		[
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"pac",
+				"Install Package Control"
+			]
+		],
+		"width": 485.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/robcowell/code/Source Code (2) (1)/ggn sources/Atari_ST_Sources/ASM/Dead Hackers Society/Demo/More_Or_Less_Zero",
+		"/Users/robcowell/code/Source Code (2) (1)/ggn sources/Atari_ST_Sources/ASM/Dead Hackers Society/Demo/More_Or_Less_Zero/circles",
+		"/Users/robcowell/code/Source Code (2) (1)/ggn sources/Atari_ST_Sources/ASM/Dead Hackers Society/Demo/More_Or_Less_Zero/music",
+		"/Users/robcowell/code/Source Code (2) (1)/ggn sources/Atari_ST_Sources/ASM/Dead Hackers Society/Demo/More_Or_Less_Zero/sys"
+	],
+	"file_history":
+	[
+		"/Users/robcowell/code/Source Code (2) (1)/ggn sources/Atari_ST_Sources/ASM/Dead Hackers Society/Demo/More_Or_Less_Zero/envmap/envmultb.s",
+		"/Users/robcowell/code/Source Code (2) (1)/ggn sources/Atari_ST_Sources/ASM/Dead Hackers Society/Demo/More_Or_Less_Zero/music/pt_src50.s",
+		"/Users/robcowell/code/Source Code (2) (1)/ggn sources/Atari_ST_Sources/ASM/Dead Hackers Society/Demo/More_Or_Less_Zero/sys/mth68000.s",
+		"/Users/robcowell/code/Source Code (2) (1)/ggn sources/Atari_ST_Sources/ASM/Dead Hackers Society/Demo/More_Or_Less_Zero/fullmain.s",
+		"/Users/robcowell/code/Source Code (2) (1)/ggn sources/Atari_ST_Sources/ASM/Dead Hackers Society/Demo/More_Or_Less_Zero/music/dma.s",
+		"/Users/robcowell/code/Source Code (2) (1)/ggn sources/Atari_ST_Sources/ASM/Dead Hackers Society/Demo/More_Or_Less_Zero/fullofs/fullofs.s",
+		"/Users/robcowell/code/Source Code (2) (1)/ggn sources/Atari_ST_Sources/ASM/Dead Hackers Society/Demo/More_Or_Less_Zero/firehorn/firehorn.s",
+		"/Users/robcowell/code/Source Code (2) (1)/ggn sources/Atari_ST_Sources/ASM/Dead Hackers Society/Demo/More_Or_Less_Zero/circles/circles.s",
+		"/Users/robcowell/code/Source Code (2) (1)/ggn sources/Atari_ST_Sources/ASM/Dead Hackers Society/Demo/More_Or_Less_Zero/scroller/scroller.s",
+		"/Users/robcowell/code/Source Code (2) (1)/ggn sources/Atari_ST_Sources/ASM/Dead Hackers Society/Demo/More_Or_Less_Zero/plasma/plasma.s",
+		"/Users/robcowell/Dropbox/AtariHD/sugar/grab0001.png",
+		"/Users/robcowell/Dropbox/AtariHD/sugar/sys/common.s",
+		"/Users/robcowell/Dropbox/AtariHD/sugar/stlow.dbl/dmg4.s",
+		"/Users/robcowell/Dropbox/AtariHD/sugar/stlow.dbl/dmg2.s",
+		"/Users/robcowell/Dropbox/AtariHD/sugar/stlow.dbl/dmg3b.s",
+		"/Users/robcowell/Dropbox/AtariHD/sugar/sugar.s",
+		"/Users/robcowell/Dropbox/AtariHD/sugar/sys/dma.s",
+		"/Users/robcowell/Dropbox/AtariHD/sugar/stlow.dbl/dmg3.s",
+		"/Users/robcowell/launch.sh",
+		"/Users/robcowell/Downloads/make.bat",
+		"/Users/robcowell/Dropbox/AtariHD/stsys10/vasm.sh"
+	],
+	"find":
+	{
+		"height": 36.0
+	},
+	"find_in_files":
+	{
+		"height": 96.0,
+		"where_history":
+		[
+			"/Users/robcowell/code/Source Code (2) (1)/ggn sources/Atari_ST_Sources/ASM/Dead Hackers Society/Demo/More_Or_Less_Zero"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"w*4",
+			"mt_channel",
+			"macro",
+			"fffffc02",
+			"movem.l",
+			"lsl"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3574,
+						"regions":
+						{
+							"match":
+							{
+								"flags": 112,
+								"regions":
+								[
+									[
+										244,
+										249
+									],
+									[
+										559,
+										564
+									],
+									[
+										819,
+										824
+									],
+									[
+										1022,
+										1027
+									],
+									[
+										1282,
+										1287
+									],
+									[
+										1494,
+										1499
+									],
+									[
+										1661,
+										1666
+									],
+									[
+										1844,
+										1849
+									],
+									[
+										2024,
+										2029
+									],
+									[
+										2204,
+										2209
+									],
+									[
+										2393,
+										2398
+									],
+									[
+										2595,
+										2600
+									],
+									[
+										2775,
+										2780
+									],
+									[
+										2940,
+										2945
+									],
+									[
+										3111,
+										3116
+									],
+									[
+										3520,
+										3523
+									]
+								],
+								"scope": ""
+							}
+						},
+						"selection":
+						[
+							[
+								3500,
+								3500
+							]
+						],
+						"settings":
+						{
+							"detect_indentation": false,
+							"line_numbers": false,
+							"output_tag": 2,
+							"result_base_dir": "",
+							"result_file_regex": "^([^ \t].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1088.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/Users/robcowell/code/Source Code (2) (1)/ggn sources/Atari_ST_Sources/ASM/Dead Hackers Society/Demo/More_Or_Less_Zero/sys/mth68000.s",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 10467,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1314,
+								1314
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/M68k Assembly/M68k-Assembly.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 235.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.MavensMate-OutputPanel":
+	{
+		"height": 100.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "MoreOrLessZero.sublime-project",
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"~/Dropbox/AtariHD/dev/anguish.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
